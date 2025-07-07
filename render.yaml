@@ -3,7 +3,7 @@ services:
     name: myportfolio
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn myportfolio.wsgi
+    startCommand: gunicorn myportfolio.wsgi:application --bind 0.0.0.0:$PORT
     repo: https://github.com/gouravyadav2817/Myportfolio
     branch: main
     autoDeploy: true
