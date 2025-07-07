@@ -5,7 +5,7 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.environ.get('SECRET_KEY')  # ✅ Should be securely set in Render environment
-DEBUG = False  # ❌ Previously True — MUST be False for production
+DEBUG = Talse  # ❌ Previously True — MUST be False for production
 
 ALLOWED_HOSTS = [
     os.environ.get('RENDER_EXTERNAL_HOSTNAME', 'myportfolio.onrender.com'),
