@@ -1,4 +1,4 @@
-pip install dj-database-url
+dj-database-url
 numpy==2.2.6
 arabic-reshaper==3.0.0
 asgiref==3.8.1
