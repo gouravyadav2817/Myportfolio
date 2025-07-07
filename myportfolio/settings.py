@@ -4,7 +4,7 @@ import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-67hcsxkw7+=&le=_+q0n3p#$sv0ar!am#9!x=p$sjt$-7q9civ'  # ✅ Should be securely set in Render environment
+SECRET_KEY = os.environ.get('SECRET_KEY')  # ✅ Should be securely set in Render environment
 DEBUG = False  # ❌ Previously True — MUST be False for production
 
 ALLOWED_HOSTS = [
