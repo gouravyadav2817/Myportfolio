@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -75,15 +76,12 @@ WSGI_APPLICATION = 'myportfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+import dj_database_url
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',  # or 'postgresql', 'sqlite3'
-        'NAME': 'myportfoliodb',
-        'USER': 'gourav',
-        'PASSWORD': 'gourav',
-        'HOST': 'localhost',
-        'PORT': '3306',  # Adjust based on your SQL engine
-    }
+    'default': dj_database_url.config(
+        default='mysql://gourav:gourav@localhost:3306/myportfoliodb',
+        conn_max_age=600
+    )
 }
 
 
